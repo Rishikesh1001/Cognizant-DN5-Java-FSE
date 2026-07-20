@@ -1,1 +1,35 @@
+/*
+==========================================================
+Exercise 1: Control Structures
+Week 2 - Cognizant Digital Nurture 5.0
+==========================================================
+Scenario:
+Apply a 1% discount to loan interest rates for customers
+whose age is above 60 years.
+==========================================================
+*/
 
+DECLARE
+    v_age NUMBER;
+BEGIN
+    FOR cust IN (SELECT CustomerID, DOB FROM Customers) LOOP
+
+        v_age := FLOOR(MONTHS_BETWEEN(SYSDATE, cust.DOB) / 12);
+
+        IF v_age > 60 THEN
+
+            UPDATE Loans
+            SET InterestRate = InterestRate - 1
+            WHERE CustomerID = cust.CustomerID;
+
+            DBMS_OUTPUT.PUT_LINE(
+                'Discount applied to Customer ID: ' || cust.CustomerID
+            );
+
+        END IF;
+
+    END LOOP;
+
+    COMMIT;
+END;
+/
