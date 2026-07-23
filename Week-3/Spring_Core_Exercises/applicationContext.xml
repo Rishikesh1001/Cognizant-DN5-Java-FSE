@@ -6,6 +6,7 @@
        http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
+
     <bean id="address" class="com.cognizant.Address">
         <property name="city" value="Patna"/>
     </bean>
@@ -26,6 +27,16 @@
           class="com.cognizant.LifeCycleBean"
           init-method="init"
           destroy-method="destroy"/>
+    <bean id="course"
+          class="com.cognizant.Course">
+        <constructor-arg value="Java Full Stack"/>
+    </bean>
+
+    <bean id="student"
+          class="com.cognizant.Student">
+        <constructor-arg value="Rishikesh"/>
+        <constructor-arg ref="course"/>
+    </bean>
 
 
 
