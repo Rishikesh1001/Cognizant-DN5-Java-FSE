@@ -37,6 +37,18 @@
         <constructor-arg value="Rishikesh"/>
         <constructor-arg ref="course"/>
     </bean>
+    <bean id="book"
+          class="com.cognizant.Book">
+        <property name="title" value="Spring Framework"/>
+    </bean>
+
+    <bean id="library"
+          class="com.cognizant.Library">
+
+        <property name="name" value="Central Library"/>
+        <property name="book" ref="book"/>
+
+    </bean>
 
 
 
