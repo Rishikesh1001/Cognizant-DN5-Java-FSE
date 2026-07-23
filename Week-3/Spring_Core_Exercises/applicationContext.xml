@@ -6,7 +6,13 @@
        http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="helloWorld"
-          class="com.cognizant.HelloWorld"/>
+    <bean id="department" class="com.cognizant.Department">
+        <constructor-arg value="Computer Science"/>
+    </bean>
+
+    <bean id="employee" class="com.cognizant.Employee">
+        <constructor-arg value="Rishikesh"/>
+        <constructor-arg ref="department"/>
+    </bean>
 
 </beans>
