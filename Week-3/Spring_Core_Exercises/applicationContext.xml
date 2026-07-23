@@ -15,6 +15,13 @@
           autowire="byType">
 
         <property name="name" value="Rishikesh"/>
+
     </bean>
+
+    <bean id="scopeBean"
+          class="com.cognizant.ScopeBean"
+          scope="prototype"/>
+
+
 
 </beans>
