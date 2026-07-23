@@ -6,13 +6,15 @@
        http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="department" class="com.cognizant.Department">
-        <constructor-arg value="Computer Science"/>
+    <bean id="address" class="com.cognizant.Address">
+        <property name="city" value="Patna"/>
     </bean>
 
-    <bean id="employee" class="com.cognizant.Employee">
-        <constructor-arg value="Rishikesh"/>
-        <constructor-arg ref="department"/>
+    <bean id="customer"
+          class="com.cognizant.Customer"
+          autowire="byType">
+
+        <property name="name" value="Rishikesh"/>
     </bean>
 
 </beans>

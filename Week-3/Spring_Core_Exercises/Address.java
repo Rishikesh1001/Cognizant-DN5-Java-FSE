@@ -8,7 +8,7 @@ public class Address {
         this.city = city;
     }
 
-    public void display() {
-        System.out.println("City: " + city);
+    public String getCity() {
+        return city;
     }
 }

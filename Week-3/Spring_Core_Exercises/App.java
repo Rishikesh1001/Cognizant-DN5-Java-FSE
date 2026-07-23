@@ -10,8 +10,8 @@ public class App {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Employee employee = context.getBean("employee", Employee.class);
+        Customer customer = context.getBean("customer", Customer.class);
 
-        employee.display();
+        customer.display();
     }
 }
