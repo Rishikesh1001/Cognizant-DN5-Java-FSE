@@ -22,6 +22,11 @@
           class="com.cognizant.ScopeBean"
           scope="prototype"/>
 
+    <bean id="lifeCycleBean"
+          class="com.cognizant.LifeCycleBean"
+          init-method="init"
+          destroy-method="destroy"/>
+
 
 
 </beans>
