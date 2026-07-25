@@ -12,4 +12,9 @@ public class AuthController {
     public String generateToken(@RequestParam String username) {
         return JwtUtil.generateToken(username);
     }
+
+    @GetMapping("/validate")
+    public String validateToken(@RequestParam String token) {
+        return "Valid Token for user: " + JwtUtil.validateToken(token);
+    }
 }

@@ -1,5 +1,6 @@
 package com.cognizant.util;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 
@@ -23,5 +24,16 @@ public class JwtUtil {
                 .expiration(new Date(System.currentTimeMillis() + 3600000))
                 .signWith(KEY)
                 .compact();
+    }
+
+    public static String validateToken(String token) {
+
+        Claims claims = Jwts.parser()
+                .verifyWith(KEY)
+                .build()
+                .parseSignedClaims(token)
+                .getPayload();
+
+        return claims.getSubject();
     }
 }
